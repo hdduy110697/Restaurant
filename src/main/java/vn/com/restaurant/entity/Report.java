@@ -29,4 +29,8 @@ public class Report {
 
 	@Column(name = "describe")
 	private String describe;
+	
+	@ManyToOne
+	@JoinColumn(name = "idImports")
+	private Report report;
 }

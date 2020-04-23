@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 import javax.persistence.Table;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -40,4 +41,10 @@ public class Imports {
 
     @Column(name = "orthercostimport")
     private Integer ortherCostImport;
+    
+    @OneToMany(mappedBy = "Imports")
+    private List<Supplier> supplier;
+    
+    @OneToMany(mappedBy = "Imports")
+    private List<Report> report;
 }

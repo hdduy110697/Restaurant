@@ -11,9 +11,13 @@ import javax.persistence.Table;
 public class TableHaveCustomer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idTable;
+    private Integer idTableHaveCustomer;
     @Column(name = "name")
     private String name;
     @Column(name = "cmnd")
     private Integer CMND;
+    
+    @ManyToOne
+    @JoinColumn(name = "idTable")
+    private TableList tableList;
 }

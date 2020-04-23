@@ -3,6 +3,7 @@ package vn.com.restaurant.entity;
 
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
 import javax.persistence.Table;
@@ -33,9 +34,6 @@ public class Staff {
 	@Column(name = "phone")
 	private Integer phone;
 
-	@Column(name = "shift")
-	private String shift;
-
 	@Column(name = "hiredate")
 	private Date hireDate;
 
@@ -45,10 +43,19 @@ public class Staff {
 	@Column(name = "part")
 	private String part;
 
-	@Column(name = "salary")
-	private Double salary;
 
 	//referent key positon
-	private Integer positionId;
+	@OneToMany(mappedBy = "Staff")
+	private List<Shift> shift;
+	
+	@OneToMany(mappedBy = "Staff")
+	private List<Position> position;
+	
+	@OneToMany(mappedBy = "Staff")
+	private List<Salary> salary;
+	
+	@ManyToMany
+	@JoinColumn(name="idEmployeeTimesheet")
+	private EmployeeTimesheet employeeTimesheet;
 
 }

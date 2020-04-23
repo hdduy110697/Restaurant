@@ -13,7 +13,7 @@ import lombok.Data;
 public class Book {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Integer idBook;
 	@Column(name = "date")
 	private Date date;
 	@Column(name = "amount")
@@ -26,4 +26,8 @@ public class Book {
 	private Integer TableId;
 	@Column(name = "describe")
 	private String describe;
+	
+	@OneToOne
+	@JoinColumn(name = "IdCustomer")
+	private Customer customer;
 }

@@ -1,6 +1,7 @@
 package vn.com.restaurant.entity;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
 import javax.persistence.Table;
@@ -34,5 +35,12 @@ public class Invoice {
 
 	@Column(name = "paid")
 	private Double paid;
+	
+	@OneToMany(mappedBy = "Invoice")
+	private List<Book> book;
+	
+	@ManyToMany
+	@JoinColumn(name = "idTable")
+	private TableHaveCustomer tableHaveCustomer;
 
 }

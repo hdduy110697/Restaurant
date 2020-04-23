@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class EmployeeTimesheet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idStaff;
+    private Integer idEmployeeTimesheet;
 
     @Column(name = "month")
     private Integer month;
