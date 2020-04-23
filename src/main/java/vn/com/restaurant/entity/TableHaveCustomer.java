@@ -18,8 +18,6 @@ public class TableHaveCustomer {
     private String name;
     @Column(name = "cmnd")
     private Integer CMND;
-
-
     @OneToMany(mappedBy = "tableHaveCustomer")
     private List<Invoice> invoices;
 

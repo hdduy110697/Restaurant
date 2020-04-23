@@ -4,6 +4,8 @@ import javax.persistence.*;
 
 import lombok.Data;
 
+import java.util.List;
+
 @Entity
 @Data
 @Table(name = "Position")
@@ -13,7 +15,7 @@ public class Position {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idPosition;
 	private String name;
-	@ManyToOne
-	@JoinColumn(name = "staff_id")
-	private Staff staff;
+
+	@OneToMany(mappedBy = "position")
+	private List<Staff> staffs;
 }

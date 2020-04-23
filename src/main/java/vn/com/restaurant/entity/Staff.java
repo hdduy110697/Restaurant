@@ -49,8 +49,10 @@ public class Staff {
 	@OneToMany(mappedBy = "staff")
 	private List<Shift> shift;
 	
-	@OneToMany(mappedBy = "staff")
-	private List<Position> position;
+
+	@ManyToOne
+	@JoinColumn(name = "idPosition")
+	private Position position;
 	
 	@OneToMany(mappedBy = "staff")
 	private List<Salary> salary;
