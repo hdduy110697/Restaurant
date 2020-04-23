@@ -1,15 +1,31 @@
 package vn.com.restaurant.entity;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
+import javax.persistence.Table;
 
 import lombok.Data;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 
 @Entity
 @Data
+@Table(name = "Supplier")
 public class Supplier {
-	private int id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer number;
+
+	@Column(name = "name")
 	private String name;
+
+	@Column(name = "address")
 	private String address;
-	private int phone;
+
+	@Column(name = "phone")
+	private Integer phone;
+
+	@Column(name = "supplyitems")
+	private String supplyItems;
+
+	@Column(name = "describe")
 	private String describe;
 }

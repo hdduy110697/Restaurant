@@ -4,25 +4,16 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "Customer")
-public class Customer {
+@Table(name = "TableList")
+public class TableList {
 	@Id
-	private Integer CMND;
-
+	private Integer idTable;
 	@Column(name = "name")
 	private String name;
-
-	@Column(name = "address")
-	private String address;
-
-	@Column(name = "phone")
-	private String phone;
-
-	@Column(name = "describe")
-	private String describe;
+	@Column(name = "location")
+	private String location;
 }

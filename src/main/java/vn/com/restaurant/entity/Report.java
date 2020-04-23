@@ -2,17 +2,31 @@ package vn.com.restaurant.entity;
 
 import java.util.Date;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
+import javax.persistence.Table;
 
 import lombok.Data;
 
 @Entity
 @Data
+@Table(name = "Process")
 public class Report {
-	private int id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+
+	@Column(name = "date")
 	private Date date;
+
+	@Column(name = "retract")
 	private Double retract;
+
+	@Column(name = "readOut")
 	private Double readOut;
+
+	@Column(name = "staff")
 	private String staff;
+
+	@Column(name = "describe")
 	private String describe;
 }

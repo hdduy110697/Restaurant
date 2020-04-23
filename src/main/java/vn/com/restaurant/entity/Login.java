@@ -1,14 +1,22 @@
 package vn.com.restaurant.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.Data;
 
 @Entity
 @Data
+@Table(name = "Login")
 public class Login {
-	private int id;
+	@Id
 	private String userName;
+
+	@Column(name = "password")
 	private String pass;
-	private int staffId;
+
+	@Column(name = "authorization")
+	private String authorization;
 }
