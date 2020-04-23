@@ -30,4 +30,8 @@ public class Book {
 	@OneToOne
 	@JoinColumn(name = "IdCustomer")
 	private Customer customer;
+
+	@ManyToOne
+	@JoinColumn(name = "invoice_id")
+	private Invoice invoice;
 }

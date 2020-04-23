@@ -5,6 +5,8 @@ import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
 import javax.persistence.Table;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -12,6 +14,7 @@ import javax.persistence.Table;
 public class EmployeeTimesheet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "timesheet_id")
     private Integer idEmployeeTimesheet;
 
     @Column(name = "month")
@@ -91,5 +94,7 @@ public class EmployeeTimesheet {
     @Column(name = "overtime")
     private Integer overTime;
 
+    @ManyToMany(mappedBy = "employeeTimesheets")
+    private List<Staff> staffs ;
 
 }

@@ -21,4 +21,7 @@ public class Shift {
 
 	@Column(name = "endtime")
 	private String endTime;
+	@ManyToOne
+	@JoinColumn(name = "staff_id")
+	private Staff staff;
 }

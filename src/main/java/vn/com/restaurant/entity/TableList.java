@@ -1,10 +1,10 @@
 package vn.com.restaurant.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+
 import lombok.Data;
+
+import java.util.Set;
 
 @Entity
 @Data
@@ -16,4 +16,5 @@ public class TableList {
 	private String name;
 	@Column(name = "location")
 	private String location;
+
 }

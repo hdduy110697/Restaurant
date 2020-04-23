@@ -28,4 +28,8 @@ public class Supplier {
 
 	@Column(name = "describe")
 	private String describe;
+
+	@ManyToOne
+	@JoinColumn(name = "idImports")
+	private Imports imports;
 }

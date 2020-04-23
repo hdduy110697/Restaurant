@@ -42,9 +42,9 @@ public class Imports {
     @Column(name = "orthercostimport")
     private Integer ortherCostImport;
     
-    @OneToMany(mappedBy = "Imports")
+    @OneToMany(mappedBy = "imports")
     private List<Supplier> supplier;
     
-    @OneToMany(mappedBy = "Imports")
+    @OneToMany(mappedBy = "imports")
     private List<Report> report;
 }

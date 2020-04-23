@@ -38,4 +38,7 @@ public class Salary {
 
     @Column(name = "status")
     private Integer status;//1= da thanh toan, 2 = chua thanh toan
+    @ManyToOne
+    @JoinColumn(name = "staff_id")
+    private Staff staff;
 }

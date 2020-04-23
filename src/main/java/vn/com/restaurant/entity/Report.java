@@ -32,5 +32,5 @@ public class Report {
 	
 	@ManyToOne
 	@JoinColumn(name = "idImports")
-	private Report report;
+	private Imports imports;
 }

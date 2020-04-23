@@ -14,6 +14,7 @@ import lombok.Data;
 public class Invoice {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "invoice_id")
 	private String id;
 
 	@Column(name = "date")
@@ -36,11 +37,11 @@ public class Invoice {
 	@Column(name = "paid")
 	private Double paid;
 	
-	@OneToMany(mappedBy = "Invoice")
+	@OneToMany(mappedBy = "invoice")
 	private List<Book> book;
 	
-	@ManyToMany
-	@JoinColumn(name = "idTable")
-	private TableHaveCustomer tableHaveCustomer;
 
+	@ManyToOne
+	@JoinColumn(name = "tablehavecustomer_id")
+	private TableHaveCustomer tableHaveCustomer;
 }

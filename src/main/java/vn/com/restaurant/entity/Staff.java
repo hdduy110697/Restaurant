@@ -17,6 +17,7 @@ public class Staff {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "staff_id")
 	private Integer idStaff;
 
 	@Column(name = "name")
@@ -45,17 +46,20 @@ public class Staff {
 
 
 	//referent key positon
-	@OneToMany(mappedBy = "Staff")
+	@OneToMany(mappedBy = "staff")
 	private List<Shift> shift;
 	
-	@OneToMany(mappedBy = "Staff")
+	@OneToMany(mappedBy = "staff")
 	private List<Position> position;
 	
-	@OneToMany(mappedBy = "Staff")
+	@OneToMany(mappedBy = "staff")
 	private List<Salary> salary;
-	
+
 	@ManyToMany
-	@JoinColumn(name="idEmployeeTimesheet")
-	private EmployeeTimesheet employeeTimesheet;
+	@JoinTable(name = "Staff_EmployeeTimesheet",
+			joinColumns = @JoinColumn(name = "staff_id"),
+			inverseJoinColumns = @JoinColumn(name = "timesheet_id")
+	)
+	private List<EmployeeTimesheet> employeeTimesheets;
 
 }
