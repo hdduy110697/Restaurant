@@ -14,8 +14,7 @@ import lombok.Data;
 public class Invoice {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "invoice_id")
-	private String id;
+	private Integer invoiceId;
 
 	@Column(name = "date")
 	private Date date;

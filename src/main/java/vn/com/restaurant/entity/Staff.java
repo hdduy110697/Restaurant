@@ -38,8 +38,8 @@ public class Staff {
 	@Column(name = "hiredate")
 	private Date hireDate;
 
-	@Column(name = "describe")
-	private String describe;
+	@Column(name = "note")
+	private String note;
 
 	@Column(name = "part")
 	private String part;

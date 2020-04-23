@@ -27,8 +27,8 @@ public class Report {
 	@Column(name = "staff")
 	private String staff;
 
-	@Column(name = "describe")
-	private String describe;
+	@Column(name = "note")
+	private String note;
 	
 	@ManyToOne
 	@JoinColumn(name = "idImports")

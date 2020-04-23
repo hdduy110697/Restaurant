@@ -23,6 +23,6 @@ public class Customer {
 	@Column(name = "phone")
 	private String phone;
 
-	@Column(name = "describe")
-	private String describe;
+	@Column(name = "note")
+	private String note;
 }

@@ -24,9 +24,9 @@ public class Book {
 
 	@Column(name = "TableId")
 	private Integer TableId;
-	@Column(name = "describe")
-	private String describe;
-	
+	@Column(name = "note")
+	private String note;
+
 	@OneToOne
 	@JoinColumn(name = "IdCustomer")
 	private Customer customer;

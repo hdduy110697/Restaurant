@@ -26,8 +26,8 @@ public class Supplier {
 	@Column(name = "supplyitems")
 	private String supplyItems;
 
-	@Column(name = "describe")
-	private String describe;
+	@Column(name = "note")
+	private String note;
 
 	@ManyToOne
 	@JoinColumn(name = "idImports")
