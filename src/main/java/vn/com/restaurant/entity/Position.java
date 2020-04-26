@@ -2,6 +2,8 @@ package vn.com.restaurant.entity;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.Data;
 
 import java.util.List;
@@ -16,6 +18,8 @@ public class Position {
 	private Integer idPosition;
 	private String name;
 
+	
+	@JsonManagedReference
 	@OneToMany(mappedBy = "position")
 	private List<Staff> staffs;
 }

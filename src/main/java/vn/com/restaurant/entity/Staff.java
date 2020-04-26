@@ -8,6 +8,9 @@ import java.util.List;
 import javax.persistence.*;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.Data;
 
 @Data
@@ -46,14 +49,18 @@ public class Staff {
 
 
 	//referent key positon
+	@JsonManagedReference
 	@OneToMany(mappedBy = "staff")
 	private List<Shift> shift;
 	
 
+	@JsonBackReference
 	@ManyToOne
 	@JoinColumn(name = "idPosition")
 	private Position position;
 	
+	
+	@JsonManagedReference
 	@OneToMany(mappedBy = "staff")
 	private List<Salary> salary;
 
